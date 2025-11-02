@@ -1,6 +1,6 @@
 # 🎀 Ateliê Marilu - Site & Painel Admin
 
-![Logo Ateliê Marilu](logo.png)
+![Logo Ateliê Marilu](images/logo.png)
 
 Este é o repositório do site de vitrine (e-commerce) para o Ateliê Marilu, focado na exibição de produtos artesanais para bebês, como kits de naninha e bichinhos de pelúcia.
 
