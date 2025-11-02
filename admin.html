@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - Ateliê Marilu</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="login-container">
+        <div class="login-box">
+            <img src="logo.png" alt="Logo Ateliê Marilu" class="logo-admin">
+            <h2>Painel Administrativo</h2>
+            <input type="email" id="login-email" placeholder="E-mail" required>
+            <input type="password" id="login-password" placeholder="Senha" required>
+            <button id="login-button">Entrar</button>
+            <p id="login-error" class="error-message"></p>
+        </div>
+    </div>
+
+    <div id="admin-panel" style="display: none;">
+        <header>
+            <h1>Painel Ateliê Marilu</h1>
+            <p>Logado como: <span id="user-email"></span></p>
+            <button id="logout-button">Sair</button>
+        </header>
+
+        <main>
+            <section class="form-container">
+                <h2>Gerenciar Carrossel Principal</h2>
+                <form id="carousel-form">
+                    <label for="carousel-images">Adicionar novas imagens (pode selecionar várias):</label>
+                    <input type="file" id="carousel-images" multiple accept="image/*">
+                    <button type="submit" id="carousel-upload-button">Enviar Imagens</button>
+                    <p id="carousel-upload-status"></p>
+                </form>
+
+                <h3>Imagens Atuais do Carrossel</h3>
+                <div id="carousel-images-list" class="product-grid">
+                    </div>
+            </section>
+
+            <section class="form-container">
+                <h2>Adicionar/Editar Produto</h2>
+                <form id="add-product-form">
+                    <label for="product-name">Nome do Produto (ex: Kit 07 ou Item 01):</label>
+                    <input type="text" id="product-name" required>
+
+                    <label for="product-type">Tipo:</label>
+                    <select id="product-type" required>
+                        <option value="kit">Kit com Naninha</option>
+                        <option value="item">Bichinho de Pelúcia</option>
+                    </select>
+
+                    <label for="product-price">Preço (ex: 145.90):</label>
+                    <input type="number" step="0.01" id="product-price" required>
+
+                    <label for="product-images">Fotos (pode selecionar várias):</label>
+                    <input type="file" id="product-images" multiple required accept="image/*">
+
+                    <button type="submit" id="submit-button">Salvar Produto</button>
+                    <p id="upload-status"></p>
+                </form>
+            </section>
+
+            <section class="products-list">
+                <h2>Produtos Cadastrados</h2>
+                <h3>Kits com Naninha</h3>
+                <div id="kits-list" class="product-grid"></div>
+                <h3>Bichinhos de Pelúcia</h3>
+                <div id="items-list" class="product-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-storage-compat.js"></script>
+    
+    <script src="admin.js"></script>
+
+</body>
+</html>

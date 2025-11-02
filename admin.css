@@ -1,0 +1,201 @@
+/* Baseado no estilo da logo */
+:root {
+    --rosa-fundo: #fceef2;
+    --marrom-texto: #6b4f4b;
+    --rosa-detalhe: #f06ea9;
+    --branco: #ffffff;
+    --sombra: rgba(107, 79, 75, 0.1);
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--rosa-fundo);
+    color: var(--marrom-texto);
+    margin: 0;
+    padding: 0;
+}
+
+/* --- TELA DE LOGIN --- */
+#login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background: var(--branco);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--sombra);
+    text-align: center;
+    width: 300px;
+}
+
+.logo-admin {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    font-family: 'Pacifico', cursive;
+    color: var(--marrom-texto);
+    margin-bottom: 20px;
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 30px;
+    border-top: 2px dashed #f7d9e3;
+    padding-top: 20px;
+}
+
+input[type="email"], input[type="password"],
+input[type="text"], input[type="number"], 
+input[type="file"], select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #f7d9e3;
+    border-radius: 8px;
+    box-sizing: border-box; /* Importante para o padding não quebrar o layout */
+    font-family: 'Nunito', sans-serif;
+}
+
+button {
+    background-color: var(--rosa-detalhe);
+    color: var(--branco);
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #d65b93;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* --- PAINEL ADMIN --- */
+#admin-panel {
+    display: none; /* Começa escondido */
+}
+
+header {
+    background-color: var(--branco);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px var(--sombra);
+}
+
+header h1 {
+    font-family: 'Pacifico', cursive;
+    color: var(--marrom-texto);
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+#logout-button {
+    width: auto;
+    background-color: var(--marrom-texto);
+}
+#logout-button:hover {
+    background-color: #4a3734;
+}
+
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.form-container, .products-list {
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--sombra);
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+#upload-status, #carousel-upload-status {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Grid de Produtos/Imagens Cadastrados */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.product-card-admin {
+    border: 1px solid #f7d9e3;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    background: #fff;
+}
+
+.product-card-admin img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.product-card-admin h4 {
+    margin: 10px 0 5px;
+    font-size: 1em;
+    font-family: 'Nunito', sans-serif;
+}
+
+.product-card-admin p {
+    font-size: 0.9em;
+    color: var(--rosa-detalhe);
+    margin: 0;
+    font-weight: bold;
+}
+
+.delete-button {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 25px;
+    padding: 0;
+    font-size: 0.8em;
+}

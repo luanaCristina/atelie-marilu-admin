@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ateliê Marilu - Kits e Pelúcias para Bebês</title>
+    
+    <meta name="description" content="Descubra o conforto e a magia do Ateliê Marilu. Nossas naninhas, feitas com o toque aveludado do tecido floquinho, proporcionam aconchego incomparável para o seu bebê. Cada bichinho de pelúcia é uma criação única, com design exclusivo e artesanal. Feitos com amor em Camaragibe-PE.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="Logo Ateliê Marilu" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#kits">Kits com Naninha</a></li>
+                    <li><a href="#items">Pelúcias</a></li>
+                    <li><a href="#contato">Localização</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="carousel">
+            <p class="loading-message" id="carousel-loading">Carregando imagens...</p>
+
+            <button class="carousel-control prev" style="display: none;">&#10094;</button>
+            <button class="carousel-control next" style="display: none;">&#10095;</button>
+        </section>
+
+        <section class="descricao container">
+            <h2>Feitos com Amor, um por um</h2>
+            <p>Descubra o conforto e a magia do Ateliê Marilu. Nossas naninhas, feitas com o toque aveludado do tecido floquinho, proporcionam aconchego incomparável para o seu bebê. Cada bichinho de pelúcia é uma criação única, com design exclusivo e artesanal, perfeito para se tornar o primeiro grande amigo do seu pequeno.</p>
+        </section>
+
+        <section id="kits" class="container">
+            <h2>Kits com Naninha</h2>
+            <div id="kits-grid" class="product-grid">
+                <p class="loading-message">Carregando kits...</p>
+            </div>
+        </section>
+
+        <section id="items" class="container">
+            <h2>Bichinhos de Pelúcia</h2>
+            <div id="items-grid" class="product-grid">
+                <p class="loading-message">Carregando pelúcias...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <div class="container">
+            <img src="logo.png" alt="Logo Ateliê Marilu" class="footer-logo">
+            <div class="footer-info">
+                <p><strong>Ateliê Marilu</strong></p>
+                <p>Localização: Camaragibe-PE</p>
+                <p><strong>Frete a combinar</strong></p>
+                <p>Temos produtos para pronta entrega e para pedidos.</p>
+                
+                <a href="https://abrir.link/qpw08" class="whatsapp-button" target="_blank">
+                    Entre em Contato pelo WhatsApp
+                </a>
+    
+                <a href="https://www.instagram.com/atelie_marilu" class="instagram-link" target="_blank">
+                    Para visualizar mais produtos, entre no nosso Instagram: <strong>@atelie_marilu</strong>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="product-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close-button">&times;</span>
+            
+            <div class="modal-slider">
+                <div id="modal-image-container">
+                    </div>
+                <button class="modal-control prev">&#10094;</button>
+                <button class="modal-control next">&#10095;</button>
+            </div>
+
+            <div class="modal-info">
+                <h3 id="modal-product-name">Nome do Produto</h3>
+                <p id="modal-product-price">R$ 0,00</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

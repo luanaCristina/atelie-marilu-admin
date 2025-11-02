@@ -1,0 +1,365 @@
+/* Importação das fontes */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap');
+
+/* Variáveis de Cor (baseadas na logo) */
+:root {
+    --rosa-fundo: #fceef2; /* Rosa bem clarinho do fundo */
+    --rosa-listras: #f7d9e3; /* Rosa das listras */
+    --marrom-texto: #6b4f4b; /* Marrom do "Marilu" */
+    --rosa-detalhe: #f06ea9; /* Rosa da borboleta */
+    --amarelo-claro: #fdf5c1; /* Amarelo da roupinha */
+    --branco: #ffffff;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--rosa-fundo);
+    color: var(--marrom-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--branco);
+    padding: 15px 0;
+    border-bottom: 2px solid var(--rosa-listras);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    max-height: 70px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--marrom-texto);
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--rosa-detalhe);
+}
+
+/* Carrossel Principal */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-height: 450px;
+    overflow: hidden;
+    background-color: var(--rosa-listras); /* Fundo rosa que aparece se a imagem não preencher */
+}
+
+.carousel-slide {
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 450px;
+    /* MUDANÇA: 'contain' mostra a imagem inteira, mantendo a proporção. */
+    object-fit: contain; 
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    color: var(--marrom-texto);
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-control:hover {
+    background-color: var(--branco);
+}
+
+.carousel-control.prev { left: 15px; }
+.carousel-control.next { right: 15px; }
+
+/* Mensagem de carregamento do Carrossel */
+#carousel-loading {
+    padding: 100px 20px;
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--marrom-texto);
+}
+
+/* Seções de Conteúdo */
+section {
+    padding: 40px 0;
+}
+
+section.descricao {
+    text-align: center;
+    background-color: var(--amarelo-claro);
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+h2 {
+    font-family: 'Pacifico', cursive;
+    color: var(--marrom-texto);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.8rem;
+}
+
+/* Mensagem de carregamento dos produtos */
+.loading-message {
+    text-align: center;
+    font-size: 1.1em;
+    color: #888;
+}
+
+/* Grid de Produtos */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: var(--branco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(107, 79, 75, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer; /* Indica que é clicável */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(107, 79, 75, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Mantemos 'cover' aqui para os cards ficarem bonitos */
+    display: block;
+}
+
+.product-card h4 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    color: var(--marrom-texto);
+    margin: 15px 0 5px;
+}
+
+.product-card p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0 15px 15px;
+    color: var(--rosa-detalhe);
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--marrom-texto);
+    color: var(--branco);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+.footer-logo {
+    max-height: 60px; /* <-- AJUSTE DE TAMANHO */
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); /* Deixa a logo branca */
+}
+
+.footer-info p { 
+    margin-bottom: 10px; 
+    font-size: 1.1rem; 
+}
+
+/* ESTILO PARA O BOTÃO DE WHATSAPP */
+.whatsapp-button {
+    display: inline-block; 
+    background-color: var(--rosa-detalhe); 
+    color: var(--branco);
+    padding: 12px 25px; 
+    border-radius: 30px; 
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 15px; 
+    margin-bottom: 25px; 
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #d65b93; 
+    text-decoration: none;
+}
+
+/* ESTILO ATUALIZADO PARA O LINK DO INSTAGRAM */
+.instagram-link {
+    display: block; 
+    color: var(--amarelo-claro); 
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.instagram-link:hover {
+    color: var(--branco); 
+}
+
+.instagram-link strong {
+    font-size: 1.15rem;
+    text-decoration: underline;
+}
+
+/* ESTILOS DO MODAL (POP-UP) DO PRODUTO 
+*/
+.modal-overlay {
+    position: fixed; /* Cobre a tela inteira */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(60, 40, 40, 0.8); /* Fundo escuro semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--branco);
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2.5rem;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 1010;
+}
+.modal-close-button:hover {
+    color: var(--marrom-texto);
+}
+
+/* Carrossel interno do Modal */
+.modal-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--rosa-fundo);
+    border-radius: 8px;
+}
+
+#modal-image-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Altura fixa para as imagens no modal */
+}
+
+.modal-slide {
+    display: none;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+.modal-slide.active {
+    display: block;
+}
+.modal-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mostra a imagem inteira dentro do modal */
+}
+
+.modal-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: var(--marrom-texto);
+    font-size: 1.5rem;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    z-index: 10;
+}
+.modal-control.prev { left: 10px; }
+.modal-control.next { right: 10px; }
+
+/* Informações do produto no modal */
+.modal-info {
+    text-align: center;
+    padding: 20px 0 0;
+}
+.modal-info h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: var(--marrom-texto);
+    margin: 0;
+}
+.modal-info p {
+    font-size: 1.5rem;
+    color: var(--rosa-detalhe);
+    font-weight: 700;
+    margin-top: 10px;
+}
